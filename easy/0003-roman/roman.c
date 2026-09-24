@@ -6,7 +6,7 @@ int getNum(char romanC);
 int romanToInt(char* s);
 
 int main(){
-    romanToInt("III");
+    printf("Roman number in INT: %d", romanToInt("III"));
     
 
 }
@@ -23,7 +23,17 @@ int romanToInt(char* s) {
         
     } else {
         for(int i = 0; i < slength; i++){
-            numFinal += getNum(s[i]);
+            
+            int current = getNum(s[i]);
+
+            int next = (i + 1 < slength) ? getNum(s[i + 1]) : 0;
+
+            if(current < next){
+                numFinal -= current;
+            }else {
+                numFinal += current;
+            }
+
         }
 
     }
