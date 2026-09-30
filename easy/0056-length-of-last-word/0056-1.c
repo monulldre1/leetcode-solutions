@@ -20,9 +20,10 @@ int lengthOfLastWord(char* s)
     int length = 0;
     for (i = slength - 1; i >= 0; i--)
     {
-        if(s[i] != ' ') {
+        if(s[i] != ' ') 
+        {
             length++;
-            if(s[i-1] == ' ') break;
+            if(i > 0 && s[i-1] == ' ') break;
         }
     }
     return length;
